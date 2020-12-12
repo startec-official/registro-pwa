@@ -14,7 +14,7 @@
             <div class="card-footer text-muted text-center container p-3" *ngIf="this.isVisible[i]">
                 <div class="row">
                     <!-- TODO : add button animation to div -->
-                    <div class="col text-success"><a [routerLink]="['/qr' , i]">Use</a></div>
+                    <div class="col text-success" [routerLink]="['/qr' , i]">Use</div>
                     <div class="col text-warning">Edit</div>
                     <div class="col text-danger">Delete</div>
                 </div>
@@ -23,11 +23,9 @@
     </div>
 </div>
 
-<!-- Code begins here -->
-<!-- TODO : vertical align image -->
 <!-- TODO : button animation -->
 <div class="float text-center" routerLink="/welcome">
-    <div class="row">
+    <div class="row h-100">
         <div class="col my-auto">
             <img src="../../assets/icons/plus.svg" alt="" width="32" height="32" title="Bootstrap" class="my-auto">
         </div>

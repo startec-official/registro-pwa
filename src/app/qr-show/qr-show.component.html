@@ -1,11 +1,11 @@
-<p>qr-code works!</p>
-
-<div class="qrcodeImage">
-    <!-- <qrcode
-          [elementType]="'img'"
-          [level]="'M'"
-          [qrdata]="'dirty grandpa'"
-          [width]="'512'"
-    ></qrcode> -->
-    <qrcode></qrcode>
+<div class="container main-wrapper">
+    <div class="row h-100 align-items-center">
+        <div class="col-sm-12 text-center">
+            <h1>Scan Me</h1>
+            <qrcode [qrdata]="'Dirty grandpa'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+        </div>  
+    </div>
+</div>
+<div class="fixed w-100 text-center">
+    <button class="btn btn-lg btn-success" routerLink="/users">Done</button>
 </div>

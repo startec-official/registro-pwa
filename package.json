@@ -24,6 +24,7 @@
     "angularx-qrcode": "~2.3.5",
     "bootstrap": "^4.5.3",
     "bootstrap-icons": "^1.2.0",
+    "crypto-js": "^4.0.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "rxjs": "~6.5.4",

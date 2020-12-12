@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from 'jquery';
 import { User } from '../user';
 @Component({
   selector: 'app-user-list',
@@ -25,13 +24,14 @@ export class UserListComponent implements OnInit {
   }
 
   showMenu( i : number ) {
-    this.isVisible[i] = !this.isVisible[i];
     if( this.lastVisible > -1 ) {
-      console.log( `last visible : ${ this.lastVisible }` );
-      this.isVisible[this.lastVisible] = false;
+      if( this.lastVisible != i ) {
+        this.isVisible[ this.lastVisible ] = false;
+      }
     }
-    if( this.lastVisible != i )
-      this.lastVisible = i;
+    this.lastVisible = i;
+    console.log( `last visible : ${ this.lastVisible }` );
+    this.isVisible[i] = !this.isVisible[i];
   }
 
 }

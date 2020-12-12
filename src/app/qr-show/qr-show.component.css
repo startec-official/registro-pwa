@@ -2,3 +2,12 @@
     display: flex;
     flex: 1;
   }
+
+  .main-wrapper {
+    height: 100vh;
+  }
+
+  .fixed {
+    position: fixed;
+    bottom: 2em;
+  }

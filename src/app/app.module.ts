@@ -7,13 +7,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeModule , QRCodeComponent } from 'angularx-qrcode';
+import { QrShowComponent } from './qr-show/qr-show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeScreenComponent,
-    UserListComponent
+    UserListComponent,
+    QrShowComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,6 @@ import { QRCodeModule } from 'angularx-qrcode';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas : [NO_ERRORS_SCHEMA]
+  exports : [QRCodeComponent]
 })
 export class AppModule { }
