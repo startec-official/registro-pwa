@@ -8,10 +8,10 @@ export class StorageService {
   constructor( private storageService : StorageMap ) { }
 
   writeData() {
-    this.storageService.set('user','hello world').subscribe(()=>console.log('message written!'));
+    return this.storageService.set('user','hello world');
   }
 
   readData() {
-    this.storageService.get('user').subscribe((data)=>console.log(data));
+    return this.storageService.get('user');
   }
 }

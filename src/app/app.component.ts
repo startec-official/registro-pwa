@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from './storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'secure-scan-pwa';
+  recMessage : string = "";
+
+  constructor( private storageService : StorageService ) {}
+
+  writeData() {
+    this.storageService.writeData().subscribe(()=>console.log('message written!'));
+  }
+
+  readData() {
+    this.storageService.readData().subscribe((data)=>console.log(data));
+  }
 }
