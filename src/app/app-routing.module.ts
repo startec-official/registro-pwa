@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { QrCodeComponent } from './qr-code/qr-code.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path : 'welcome' , component : WelcomeScreenComponent },
+  {path : 'users' , component : UserListComponent },
+  { path : 'qr/:id' , component : QrCodeComponent },
+  { path : '' , redirectTo : '/welcome' , pathMatch : 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
