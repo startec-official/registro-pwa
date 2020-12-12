@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Observable } from 'rxjs';
 import { User } from '../user';
+import { QRCodeModule } from "angularx-qrcode";
 @Component({
   selector: 'app-qr-code',
-  templateUrl: './qr-code.component.html',
-  styleUrls: ['./qr-code.component.css']
+  templateUrl: './qr-show.component.html',
+  styleUrls: ['./qr-show.component.css'],
 })
-export class QrCodeComponent implements OnInit {
+export class QrShowComponent implements OnInit {
 
   currentId : number;
   currentUser : User;

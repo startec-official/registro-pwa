@@ -5,4 +5,5 @@
   </ul>
 </nav> -->
 <!-- The routed views render in the <router-outlet>-->
+  <qrcode [qrdata]="'Your data string'" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
 <router-outlet></router-outlet>

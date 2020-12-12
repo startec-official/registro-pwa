@@ -18,9 +18,9 @@ export class UserListComponent implements OnInit {
     this.users = [];
     this.isVisible = [];
     this.lastVisible = -1;
-    new User( 'CLIVE BIXBY' , 20 ,'M' , '705 Artex Building435 Juan Luna Street Binondo 1000, Manila' )
+    this.users.push( new User( 'CLIVE BIXBY' , 20 ,'M' , '705 Artex Building435 Juan Luna Street Binondo 1000, Manila' ) );
     this.isVisible.push(false);
-    new User( 'CLIVE BIXBY' , 20 ,'M' , '705 Artex Building435 Juan Luna Street Binondo 1000, Manila' )
+    this.users.push( new User( 'CLIVE BIXBY' , 20 ,'M' , '705 Artex Building435 Juan Luna Street Binondo 1000, Manila' ) );
     this.isVisible.push(false);
   }
 
