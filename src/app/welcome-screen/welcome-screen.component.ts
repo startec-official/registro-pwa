@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../utils/storage.service';
 
 @Component({
   selector: 'app-welcome-screen',
@@ -11,5 +12,4 @@ export class WelcomeScreenComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

@@ -1,0 +1,206 @@
+<form (ngSubmit)="onSubmit(registrationForm.value)" #registrationForm="ngForm">
+    <div class="container-fluid shadow-sm header mb-5 text-center">
+        <div class="row m-2">
+            <div class="col-sm-12">
+                <strong>Register New User</strong>
+                <button type="button" class="close" aria-label="Close" routerLink="/users">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+            </div>
+        </div>
+    </div>
+    <div class="container"><div class="row"><div class="col-sm-12 mt-1"><br /></div></div></div>
+    <div class="container mt-5">
+        <div class="form-group row">
+            <label for="firstName" class="col-sm-3 col-form-label">First Name</label>
+            <div class="col-sm-9">
+                <input type="text"  
+                    required
+                    class="form-control"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="First Name"
+                    ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lastName" class="col-sm-3">Last Name</label>
+            <div class="col-sm-9">
+                <input type="text"  
+                    required
+                    class="form-control"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Last Name"
+                    ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="middleInitial" class="col-sm-3">Middle Initial</label>
+            <div class="col-sm-3">
+                <input type="text"  
+                    required
+                    class="form-control"
+                    name="middleInitial"
+                    id="middleInitial"
+                    placeholder="M.I."
+                    maxlength="1"
+                    ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="sex" class="col-sm-3">Sex</label>
+            <div class="col-sm-3">
+                <select required class="form-control" id="sex" name="sex" ngModel>
+                    <option>Male</option>
+                    <option>Female</option>
+                    </select>
+            </div>
+        </div>
+        <br />  
+        <div class="form-group row">
+            <label for="birthdate" class="col-sm-3">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="date"
+                    required
+                    class="form-control col-sm-5"
+                    name="birthdate"
+                    id="birthdate"
+                    ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="age" class="col-sm-3">Age</label>
+            <div class="col-sm-4">
+                <input type="number"  
+                    required
+                    class="form-control"
+                    name="age"
+                    id="age"
+                    placeholder="ex. 21"
+                    ngModel>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"><hr></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h5>Address</h5>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="houseNumber" class="col-sm-3 col-form-label">House/Lot/Bldg No.</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="houseNumber"
+                       name="houseNumber"
+                       placeholder="ex. #58, 1425"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="zone" class="col-sm-3 col-form-label">Zone</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="zone"
+                       name="zone"
+                       placeholder="ex. Zone 1, Sona 2, Purok 3"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="street" class="col-sm-3 col-form-label">Street</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="street"
+                       name="street"
+                       placeholder="Luna Street, Malate Drive"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="subdivision" class="col-sm-3 col-form-label">Subdivision</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="subdivision"
+                       name="subdivision"
+                       placeholder="ex. Ramada Village, Victoria Subdivision"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="barangay" class="col-sm-3 col-form-label">Barangay</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="barangay"
+                       name="barangay"
+                       placeholder="ex. San Nicolas, Bgy 145, Santiago Young"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="city" class="col-sm-3 col-form-label">City</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="city"
+                       name="city"
+                       placeholder="ex. Nabua, Manila, Olongapo"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="province" class="col-sm-3 col-form-label">Province</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="province"
+                       name="province"
+                       placeholder="ex. Camarines Sur, Quezon"
+                       ngModel>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="region" class="col-sm-3 col-form-label">Region</label>
+            <div class="col-sm-9">
+                <input type="text"
+                       class="form-control"
+                       id="region"
+                       name="region"
+                       placeholder="ex. MIMAROPA, Bicol"
+                       ngModel>
+            </div>
+        </div>
+    </div>
+    <div class="container"><div class="row"><div class="col-sm-12"><hr></div></div></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h5>Review Data Privacy Act</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="certify" name="certify" ngModel>
+                    <label class="form-check-label" for="defaultCheck1">
+                      I hereby certify that the data I provided is accurate at the time of registration. I understand my data will only be used exclusively for COVID-19 contact tracing efforts by a certified government agency.
+                    </label>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-sm-12 text-center">
+            <button type="submit" class="btn btn-lg btn-success m-5">Submit</button>
+        </div>
+    </div>
+</form>

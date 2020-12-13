@@ -9,19 +9,23 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 import { UserListComponent } from './user-list/user-list.component';
 import { QRCodeModule , QRCodeComponent } from 'angularx-qrcode';
 import { QrShowComponent } from './qr-show/qr-show.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeScreenComponent,
     UserListComponent,
-    QrShowComponent
+    QrShowComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    QRCodeModule
+    QRCodeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,12 +11,4 @@ export class AppComponent {
   recMessage : string = "";
 
   constructor( private storageService : StorageService ) {}
-
-  writeData() {
-    this.storageService.writeData().subscribe(()=>console.log('message written!'));
-  }
-
-  readData() {
-    this.storageService.readData().subscribe((data)=>console.log(data));
-  }
 }

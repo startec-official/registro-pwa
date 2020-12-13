@@ -3,6 +3,8 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Observable } from 'rxjs';
 import { User } from '../user';
 import { QRCodeModule } from "angularx-qrcode";
+import { StorageService } from '../utils/storage.service';
+import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 @Component({
   selector: 'app-qr-code',
   templateUrl: './qr-show.component.html',
@@ -13,26 +15,34 @@ export class QrShowComponent implements OnInit {
   currentId : number;
   currentUser : User;
   paramSubs: Observable<ParamMap>;
+  qrData : string;
+  dataReady : boolean;
 
-  constructor( private route : ActivatedRoute ) { }
+  constructor( private route : ActivatedRoute,
+               private storageService : StorageService ) { }
 
   // TODO : add guard to prevent null exceptions
 
   ngOnInit(): void {
+    this.dataReady = false;
     this.paramSubs = this.route.paramMap;
     this.paramSubs.subscribe(params => {
       this.currentId = parseInt(params.get('id'));
     });
     this.getInfo();
-    this.generateCode();
   }
 
-  generateCode() : void {
+  generateCode( userData : User ) : void {
     console.log(`Code generation for ${this.currentId} begins here...`);
+    this.qrData = userData.name + "|" + userData.age + "|" + userData.sex + "|" + userData.address;
+    // TODO : convert data into encrypted text
+    this.dataReady = true;
   }
 
   getInfo() : void {
-    // TODO : replace with retrieved info from storage
-    this.currentUser = new User( 'CLIVE BIXBY' , 20 ,'M' , '705 Artex Building435 Juan Luna Street Binondo 1000, Manila' );
+    this.storageService.readData('user-' + this.currentId).subscribe((userData : User) => {
+      console.log(userData);
+      this.generateCode(userData);
+    });
   }
 }
