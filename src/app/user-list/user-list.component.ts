@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit {
   lastVisible : number;
   isVisible : boolean[];
   dataReady : boolean;
+  listEmpty : boolean;
 
   constructor( private storageService : StorageService ) { }
 
@@ -20,12 +21,19 @@ export class UserListComponent implements OnInit {
     this.isVisible = [];
     this.lastVisible = -1;
     this.dataReady = false;
+    this.listEmpty = true;
     this.getUsers();
   }
 
   getUsers() : void {
     this.storageService.retrieveUserEntries().then((userData : User[]) => {
       this.users = userData;
+      // FIXME : set list empty to false only when a user is detected
+      if( this.users.length > 0 ) { 
+        this.listEmpty = false;
+        console.log( this.users.length );
+      }
+      this.listEmpty = false; // debug only
       this.dataReady = true;
       console.log( this.users );
     });

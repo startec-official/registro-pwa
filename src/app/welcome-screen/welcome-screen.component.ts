@@ -8,8 +8,12 @@ import { StorageService } from '../utils/storage.service';
 })
 export class WelcomeScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor( private storageService : StorageService ) { }
 
   ngOnInit(): void {
+  }
+
+  clearEntries() {
+    this.storageService.removeAllEntries().subscribe(() => console.log('all entries cleared...'));
   }
 }

@@ -10,5 +10,7 @@ export class AppComponent {
   title = 'secure-scan-pwa';
   recMessage : string = "";
 
-  constructor( private storageService : StorageService ) {}
+  // TODO : configure serviceWorker to complete full offline caching, and sync
+  // TODO : add an 'add to home screen' feature
+  constructor() {}
 }
