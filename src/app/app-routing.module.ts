@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { InstallHelpComponent } from './install-help/install-help.component';
 import { QrShowComponent } from './qr-show/qr-show.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -9,6 +10,7 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 
 const routes: Routes = [
   { path : 'welcome' , component : WelcomeScreenComponent },
+  { path : 'install' , component : InstallHelpComponent },
   {path : 'users' , component : UserListComponent },
   { path : 'qr/:id' , 
     component : QrShowComponent,

@@ -11,6 +11,7 @@ import { QRCodeModule , QRCodeComponent } from 'angularx-qrcode';
 import { QrShowComponent } from './qr-show/qr-show.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
+import { InstallHelpComponent } from './install-help/install-help.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     WelcomeScreenComponent,
     UserListComponent,
     QrShowComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    InstallHelpComponent
   ],
   imports: [
     BrowserModule,

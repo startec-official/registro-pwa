@@ -1,0 +1,68 @@
+<div class="container-fluid text-center shadow-sm p-1 mb-2 bg-white rounded">
+    <div class="row">
+        <div class="col-sm-12">
+            <h5><strong>How to Install</strong></h5>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p>No wifi? No problem. </p>
+            <p> Follow the steps to download the offline app!!</p>
+        </div>
+    </div>
+    <div class="form-group row text-center">
+        <label for="selectBrowser" class="col-sm-12">Choose a browser:</label>
+        <div class="col-sm-6 mx-auto">
+            <select class="form-control" id="selectBrowser" [(ngModel)]="browserType">
+                <option value="chrome">Google Chrome</option>
+                <option value="samsung">Samsung Internet</option>
+            </select>
+        </div>
+        </div>
+    <ng-container [ngSwitch]="browserType">
+        <div class="row" *ngSwitchDefault>
+            <div class="col-sm-12 text-center">
+                <p class="text-muted"><i>Instructions will appear here. Choose a browser.</i></p>
+            </div>
+        </div>
+        <div class="row" *ngSwitchCase="'chrome'">
+            <div class="col-sm-12">
+                <p><strong>Chrome Browser</strong></p>
+                <table class="table table-borderless">
+                    <tr>
+                    <td class="text-center"><strong>Step 1</strong></td>
+                    <td>Make sure Chrome has a modern version. If unsure, update your Chrome Browser.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><strong>Step 2</strong></td>
+                        <td>Press the menu button (symbol here)</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><strong>Step 3</strong></td>
+                        <td>Click the option (symbol here) <i>add to install</i></td>
+                    </tr>
+                </table>
+                <p> <strong>NOTE</strong> If you can't see the button, update your browser</p>
+            </div>
+        </div>
+        <div class="row" *ngSwitchCase="'samsung'">
+            <div class="col-sm-12">
+                <p><strong>Samsung Internet</strong></p>
+                <table class="table table-borderless">
+                    <tr>
+                    <td class="text-center"><strong>Step 1</strong></td>
+                    <td>Make sure Samsung internet has a modern version. If unsure, update your Samsung Internet App.</td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><strong>Step 2</strong></td>
+                        <td>Press the download app button in the app header</td>
+                    </tr>
+                </table>
+                <p>Image of header here</p>
+            </div>
+        </div>
+    </ng-container>
+</div>

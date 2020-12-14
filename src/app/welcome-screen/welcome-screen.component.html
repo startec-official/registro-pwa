@@ -1,12 +1,14 @@
-<div class="container">
-    <div class="col-sm-12 text-center">
-      <h1>Welcome to Secure Scan</h1>
-      <p class="mx-5">CLICK ADD TO HOMESCREEN TO DOWNLOAD APP</p>
-      <p>then</p>
-      <button class="btn btn-lg btn-success" routerLink="/users">Continue</button>
-      <p>- or -</p>
-      <button class="btn btn-sm btn-primary">One-time Online</button>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h1>Welcome to Secure Scan</h1>
+      </div>
     </div>
-    <br>
-    <button class="btn btn-danger" (click)="clearEntries()">Clear memory entries</button>
+    <div class="row" style="height: 60vh">
+      <div class="col-sm-12 my-auto text-center">
+        <button class="btn btn-sm btn-primary mb-3" routerLink="/install">Install App</button>
+        <p>- or -</p>
+        <button class="btn btn-lg btn-success mt-3"  routerLink="/users">Continue</button>
+      </div>
+    </div>
   </div>
