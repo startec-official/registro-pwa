@@ -22,10 +22,11 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit( formValue : any ) {
     this.formModel.name = formValue.personal.firstName + " " + formValue.personal.middleInitial + " " + formValue.personal.lastName;
-    this.formModel.name += formValue.personal.suffix == "" ? " " + formValue.personal.suffix : "";
+    this.formModel.name += formValue.personal.suffix != "none" ? " " + formValue.personal.suffix : "";
     this.formModel.age = formValue.personal.age;
     this.formModel.birthdate = formValue.personal.birthdate;
     this.formModel.sex = formValue.personal.sex;
+    this.formModel.phoneNumber = formValue.personal.phoneNumber;
 
     let addressString : string = "";
     const addressParts = Object.values(formValue.address);
