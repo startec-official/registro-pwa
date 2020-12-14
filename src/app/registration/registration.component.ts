@@ -22,6 +22,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit( formValue : any ) {
     this.formModel.name = formValue.personal.firstName + " " + formValue.personal.middleInitial + " " + formValue.personal.lastName;
+    this.formModel.name += formValue.personal.suffix == "" ? " " + formValue.personal.suffix : "";
     this.formModel.age = formValue.personal.age;
     this.formModel.sex = formValue.personal.sex;
 

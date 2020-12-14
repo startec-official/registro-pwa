@@ -22,8 +22,6 @@ export class QrShowComponent implements OnInit {
                private router : Router,
                private storageService : StorageService ) { }
 
-  // TODO : add guard to prevent null exceptions
-
   ngOnInit(): void {
     this.dataReady = false;
     this.paramSubs = this.route.paramMap;

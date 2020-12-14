@@ -70,6 +70,34 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="suffix" class="col-sm-3 col-form-label">Sex
+                    <span class="text-danger" *ngIf="suffix.invalid && ( suffix.touched || suffix.dirty )"> 
+                        <span class="badge badge-danger">🛈</span>
+                        required
+                    </span>
+                </label>
+                <div class="col-sm-3">
+                    <select required
+                            class="form-control"
+                            id="suffix"
+                            name="suffix" 
+                            #suffix="ngModel"
+                            ngModel>
+                        <option value="">None</option>
+                        <option>SR</option>
+                        <option>JR</option>
+                        <option>III</option>
+                        <option>IV</option>
+                        <option>V</option>
+                        <option>VI</option>
+                        <option>VII</option>
+                        <option>VIII</option>
+                        <option>IX</option>
+                        <option>X</option>
+                        </select>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="sex" class="col-sm-3 col-form-label">Sex
                     <span class="text-danger" *ngIf="sex.invalid && ( sex.touched || sex.dirty )"> 
                         <span class="badge badge-danger">🛈</span>
