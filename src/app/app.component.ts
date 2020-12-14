@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { QrGuardService } from './utils/qr-guard.service';
 import { StorageService } from './utils/storage.service';
 
 @Component({

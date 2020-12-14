@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import { ActivatedRoute, NavigationEnd, ParamMap, Router } from "@angular/router";
 import { Observable } from 'rxjs';
-import { User } from '../user';
-import { QRCodeModule } from "angularx-qrcode";
+import { User } from '../utils/user';
 import { StorageService } from '../utils/storage.service';
-import { UseExistingWebDriver } from 'protractor/built/driverProviders';
+import { filter } from "rxjs/operators";
+
 @Component({
   selector: 'app-qr-code',
   templateUrl: './qr-show.component.html',
-  styleUrls: ['./qr-show.component.css'],
+  styleUrls: ['./qr-show.component.css']
 })
 export class QrShowComponent implements OnInit {
 
@@ -19,6 +19,7 @@ export class QrShowComponent implements OnInit {
   dataReady : boolean;
 
   constructor( private route : ActivatedRoute,
+               private router : Router,
                private storageService : StorageService ) { }
 
   // TODO : add guard to prevent null exceptions

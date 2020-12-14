@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { Observable } from 'rxjs';
-import { User } from '../user';
+import { User } from './user';
 @Injectable({
   providedIn: 'root'
 })
