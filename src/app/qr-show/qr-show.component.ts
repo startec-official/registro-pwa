@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, ParamMap, Router } from "@angular/router
 import { Observable } from 'rxjs';
 import { User } from '../utils/user';
 import { StorageService } from '../utils/storage.service';
+import { CryptoService } from '../utils/crypto.service';
 
 @Component({
   selector: 'app-qr-code',
@@ -19,7 +20,8 @@ export class QrShowComponent implements OnInit {
 
   constructor( private route : ActivatedRoute,
                private router : Router,
-               private storageService : StorageService ) { }
+               private storageService : StorageService,
+               private cryptoService : CryptoService ) { }
 
   ngOnInit(): void {
     this.dataReady = false;
@@ -32,8 +34,8 @@ export class QrShowComponent implements OnInit {
 
   generateCode( userData : User ) : void {
     console.log(`Code generation for ${this.currentId} begins here...`);
-    this.qrData = userData.name + "|" + userData.age + "|" + userData.birthdate + "|" + userData.sex + "|" + userData.phoneNumber + "|" + userData.address + "<<";
-    // TODO : convert data into encrypted text
+    let plaintext = userData.name + "|" + userData.age + "|" + userData.birthdate + "|" + userData.sex + "|" + userData.phoneNumber + "|" + userData.address;
+    this.qrData = this.cryptoService.encryptQr( plaintext );
     this.dataReady = true;
   }
 
