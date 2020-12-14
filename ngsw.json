@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1607853110828,
+  "timestamp": 1607905227681,
   "index": "https://startec-official.github.io/pwa-secure-scan/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://startec-official.github.io/pwa-secure-scan/favicon.ico",
         "https://startec-official.github.io/pwa-secure-scan/index.html",
-        "https://startec-official.github.io/pwa-secure-scan/main-es2015.7c94c06f121b7223fd9c.js",
-        "https://startec-official.github.io/pwa-secure-scan/main-es5.7c94c06f121b7223fd9c.js",
+        "https://startec-official.github.io/pwa-secure-scan/main-es2015.2125e991a3db2152c623.js",
+        "https://startec-official.github.io/pwa-secure-scan/main-es5.2125e991a3db2152c623.js",
         "https://startec-official.github.io/pwa-secure-scan/manifest.webmanifest",
         "https://startec-official.github.io/pwa-secure-scan/polyfills-es2015.f332a089ad1600448873.js",
         "https://startec-official.github.io/pwa-secure-scan/polyfills-es5.177e85a9724683782539.js",
@@ -24,9 +24,10 @@
     },
     {
       "name": "assets",
-      "installMode": "lazy",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
+        "https://startec-official.github.io/pwa-secure-scan/assets/empty-users-splash.png",
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-128x128.png",
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-144x144.png",
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-152x152.png",
@@ -35,13 +36,14 @@
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-512x512.png",
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-72x72.png",
         "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-96x96.png",
-        "https://startec-official.github.io/pwa-secure-scan/assets/icons/plus.svg"
+        "https://startec-official.github.io/pwa-secure-scan/assets/plus.svg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
+    "https://startec-official.github.io/pwa-secure-scan/assets/empty-users-splash.png": "6e531d095e3c72476edb219b5cc549e5ed8f8f97",
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -50,11 +52,11 @@
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://startec-official.github.io/pwa-secure-scan/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "https://startec-official.github.io/pwa-secure-scan/assets/icons/plus.svg": "2c0059acc025a99b2fd565cf083f3bf9ba156913",
+    "https://startec-official.github.io/pwa-secure-scan/assets/plus.svg": "2c0059acc025a99b2fd565cf083f3bf9ba156913",
     "https://startec-official.github.io/pwa-secure-scan/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://startec-official.github.io/pwa-secure-scan/index.html": "f82a38068388afd626b9d7c85f0e997a358c1f94",
-    "https://startec-official.github.io/pwa-secure-scan/main-es2015.7c94c06f121b7223fd9c.js": "1d1c1ac68d7ab7ea6ad592ba36adf9fa236554a0",
-    "https://startec-official.github.io/pwa-secure-scan/main-es5.7c94c06f121b7223fd9c.js": "caa0595c283941ec23559a479b32194129f6eb59",
+    "https://startec-official.github.io/pwa-secure-scan/index.html": "1884f5b28a77d05f1f01a245fecb62016203b17a",
+    "https://startec-official.github.io/pwa-secure-scan/main-es2015.2125e991a3db2152c623.js": "93aa18442243c2db8dc21f412c72a846aea16ca9",
+    "https://startec-official.github.io/pwa-secure-scan/main-es5.2125e991a3db2152c623.js": "b88ce34b063c3876d1d041c6d24d9a01e68a555a",
     "https://startec-official.github.io/pwa-secure-scan/manifest.webmanifest": "7ef80dc8dfdafeacce41ba32393a6aaa992fda34",
     "https://startec-official.github.io/pwa-secure-scan/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://startec-official.github.io/pwa-secure-scan/polyfills-es5.177e85a9724683782539.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
