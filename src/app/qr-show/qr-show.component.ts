@@ -33,7 +33,7 @@ export class QrShowComponent implements OnInit {
 
   generateCode( userData : User ) : void {
     console.log(`Code generation for ${this.currentId} begins here...`);
-    this.qrData = userData.name + "|" + userData.age + "|" + userData.sex + "|" + userData.address;
+    this.qrData = userData.name + "|" + userData.age + "|" + userData.birthdate + "|" + userData.sex + "|" + userData.phoneNumber + "|" + userData.address;
     // TODO : convert data into encrypted text
     this.dataReady = true;
   }
