@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  qrSize : 256,
+  prefix : 'user-',
+  prefixDelim : '-',
+  delimiter : '|',
+  terminator : '<<',
+  keyCharCount : 4
 };
 
 /*

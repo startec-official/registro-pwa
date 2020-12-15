@@ -1,3 +1,9 @@
 export const environment = {
-  production: true
+  production: true,
+  qrSize : 256,
+  prefix : 'user-',
+  prefixDelim : '-',
+  delimiter : '|',
+  terminator : '<<',
+  keyCharCount : 4
 };

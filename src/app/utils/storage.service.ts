@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from './user';
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class StorageService {
 
   constructor( private storage : StorageMap ) { }
 
-  writeData( key : string , userData : User ) {
+  writeData( key : string , userData : User ) : any {
     return this.storage.set( key , userData );
   }
 
@@ -17,41 +18,46 @@ export class StorageService {
     return this.storage.get( key );
   }
 
-  countDataEntries() : Promise<number> {
+  getNextIndex() : Promise<number> {
     return new Promise((resolve,reject) =>{
-      let entriesCount : number = 0;
+      let nextIndex : number = -1;
       this.storage.keys().subscribe({
         next: (key : string ) => {
-          if( key.indexOf('user-') > -1 )
-            entriesCount ++;
+          if( key.indexOf( environment.prefix ) > -1 ) {
+            let comparator : number = parseInt(key.toString().split( environment.prefixDelim )[1]);
+            if( comparator > nextIndex )
+              nextIndex = comparator;
+          }
         },
         complete: () => {
-          resolve(entriesCount);
+          resolve(nextIndex+1);
         },
         error : (error) => {
-          reject(-1);
+          reject(error);
         }
       });
-      return entriesCount;
+      return nextIndex;
     });
   }
 
-  retrieveUserEntries() : Promise<User[]> {
+  retrieveUserEntries() : Promise<{ userArray : User[] , userKeys : string[] }> {
     return new Promise((resolve,reject) =>{
       let users = [];
+      let keys = [];
       this.storage.keys().subscribe({
         next: (key : string ) => {
-          if( key.indexOf('user-') > -1 ) {
+          if( key.indexOf( environment.prefix ) > -1 ) {
             this.storage.get(key).subscribe((user : User)=>{
               users.push( user );
+              keys.push(key);
             });
           }
         },
         complete: () => {
-          resolve(users);
+          resolve( { userArray : users , userKeys : keys } );
         },
         error : (error) => {
-          reject([]);
+          reject( error );
         }
       });
     });

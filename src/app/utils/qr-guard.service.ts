@@ -40,7 +40,7 @@ export class QrGuardService implements CanActivate {
 		// is a page-refresh, we'll navigate to the same URL less the secondary outlet.
 		if ( this.isPageRefresh() ) {
 
-			console.warn( "qr code page not allowed on refresh..." );
+			console.warn( 'qr code page not allowed on refresh...' );
 			this.router.navigateByUrl( '' );
 			return( false );
 		}

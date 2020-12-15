@@ -5,15 +5,7 @@
 </div>
 <div class="container"><div class="row"><div class="cols-sm-12 mt-5"><br></div></div></div>
 <ng-container *ngIf="dataReady">
-    <div class="container-fluid" style="height: 60vh;" *ngIf="listEmpty">
-        <div class="row h-100 text-center">
-            <div class="col-sm-12 my-auto">
-                <p class="text-muted mb-3">No Users Currently Found, press the plus button below to add a user.</p>
-                <img src="assets/empty-users-splash.png" alt="No users icon">
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid" *ngIf="!listEmpty">
+    <div class="container-fluid">
         <div class="row text-center">
             <div class="col-sm-12 text-center" *ngFor="let user of users; index as i">
                 <div class="card m-2 text-left">
@@ -24,7 +16,7 @@
                     </div>
                     <div class="card-footer text-muted text-center p-3" *ngIf="this.isVisible[i]">
                         <div class="row">
-                            <div class="col text-success" [routerLink]="['/qr' , i]">Use</div>
+                            <div class="col text-success" [routerLink]="['/qr' , keys[i]]">Use</div>
                             <div class="col text-warning">Edit</div>
                             <div class="col text-danger">Delete</div>
                         </div>

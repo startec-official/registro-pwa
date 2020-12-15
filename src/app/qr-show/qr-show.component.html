@@ -2,8 +2,9 @@
     <div class="container main-wrapper">
         <div class="row h-100 align-items-center">
             <div class="col-sm-12 text-center">
-                <h1>Scan Me</h1>
-                <qrcode [qrdata]="qrData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+                <h5><strong>{{this.currentUser.name}}</strong></h5>
+                <p class="text-muted">{{this.currentUser.address}}</p>
+                <qrcode [qrdata]="qrData" [width]="" [errorCorrectionLevel]="'M'"></qrcode>
             </div>
         </div>
     </div>

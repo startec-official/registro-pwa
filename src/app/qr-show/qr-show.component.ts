@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../utils/user';
 import { StorageService } from '../utils/storage.service';
 import { CryptoService } from '../utils/crypto.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-qr-code',
@@ -12,36 +13,47 @@ import { CryptoService } from '../utils/crypto.service';
 })
 export class QrShowComponent implements OnInit {
 
-  currentId : number;
+  currentKey : string;
   currentUser : User;
+  
   paramSubs: Observable<ParamMap>;
+  
   qrData : string;
+  qrSize : number;
+
   dataReady : boolean;
 
   constructor( private route : ActivatedRoute,
-               private router : Router,
                private storageService : StorageService,
                private cryptoService : CryptoService ) { }
 
   ngOnInit(): void {
     this.dataReady = false;
-    this.paramSubs = this.route.paramMap;
-    this.paramSubs.subscribe(params => {
-      this.currentId = parseInt(params.get('id'));
-    });
+    this.qrSize = environment.qrSize;
+    this.currentUser = new User('',-1,'','','','');
+    this.getParameters();
     this.getInfo();
   }
 
+  getParameters() : void {
+    this.paramSubs = this.route.paramMap;
+    this.paramSubs.subscribe(params => {
+      this.currentKey = params.get('id').toString();
+    });
+  }
+
   generateCode( userData : User ) : void {
-    console.log(`Code generation for ${this.currentId} begins here...`);
-    let plaintext = userData.name + "|" + userData.age + "|" + userData.birthdate + "|" + userData.sex + "|" + userData.phoneNumber + "|" + userData.address;
-    this.qrData = this.cryptoService.encryptQr( plaintext );
+    let plaintext : string = "";
+    for( const property in userData )
+      plaintext += userData[property] + environment.delimiter;
+    plaintext = plaintext.slice(0,plaintext.length-1);
+    this.qrData = this.cryptoService.encryptQr( plaintext ); // encrypt with AES append the key to ciphertext
     this.dataReady = true;
   }
 
   getInfo() : void {
-    this.storageService.readData('user-' + this.currentId).subscribe((userData : User) => {
-      console.log(userData);
+    this.storageService.readData(this.currentKey).subscribe((userData : User) => {
+      this.currentUser = userData;
       this.generateCode(userData);
     });
   }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../utils/user';
 import { StorageService } from '../utils/storage.service';
+import { environment } from 'src/environments/environment';
+import { of } from "rxjs";
+import { map , mergeMap } from "rxjs/operators";
 
 @Component({
   selector: 'app-registration',
@@ -21,23 +24,38 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit( formValue : any ) {
-    this.formModel.name = formValue.personal.firstName + " " + formValue.personal.middleInitial + " " + formValue.personal.lastName;
-    this.formModel.name += formValue.personal.suffix != "none" ? " " + formValue.personal.suffix : "";
+    this.addPersonalInfo(formValue);
+    this.addAddress(formValue);
+
+    const writeDataProcess = of(2);
+    let index : number;
+    writeDataProcess.pipe(
+      mergeMap((taskCount)=>{
+        return this.storageService.getNextIndex();
+      }),
+      mergeMap((nextIndex : number )=> {
+        index = nextIndex;
+        return this.storageService.writeData(environment.prefix + nextIndex, this.formModel);
+      })
+    ).subscribe(() => {
+      this.router.navigate(['qr', environment.prefix + index] , {relativeTo : this.route.parent });
+    });
+  }
+
+  addPersonalInfo( formValue : any ) : void {
+    this.formModel.name = `${formValue.personal.firstName} ${formValue.personal.middleInitial} ${formValue.personal.lastName}`;
+    this.formModel.name += formValue.personal.suffix != "none" ? ` ${formValue.personal.suffix}` : '';
     this.formModel.age = formValue.personal.age;
     this.formModel.birthdate = formValue.personal.birthdate;
     this.formModel.sex = formValue.personal.sex;
     this.formModel.phoneNumber = formValue.personal.phoneNumber;
+  }
 
-    let addressString : string = "";
+  addAddress( formValue : any ) : void {
+    let addressString : string = '';
     const addressParts = Object.values(formValue.address);
-    for( const addressPart of addressParts ) {
-      addressString += addressPart != "" ? addressPart + ", " : "";;
-    }
+    for( const addressPart of addressParts )
+      addressString += addressPart != '' ? addressPart + ', ' : '';
     this.formModel.address = addressString.substr(0,addressString.length-2);
-    
-    console.log( this.storageService.countDataEntries().then(( nextIndex : number ) => {
-      this.storageService.writeData('user-' + nextIndex,this.formModel).subscribe(()=>console.log(`user-${nextIndex} successfully written to memory!`));
-      this.router.navigate(['qr', nextIndex] , {relativeTo : this.route.parent });
-    }));
   }
 }

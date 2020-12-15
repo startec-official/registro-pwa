@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-sm-12">
             <h5><strong>How to Install</strong></h5>
+            <button type="button" class="close" aria-label="Close" routerLink="/users">
+                <span aria-hidden="true">&times;</span>
+              </button>
         </div>
     </div>
 </div>
@@ -38,14 +41,20 @@
                     </tr>
                     <tr>
                         <td class="text-center"><strong>Step 2</strong></td>
-                        <td>Press the menu button (symbol here)</td>
+                        <td>
+                            <p>Press the menu button</p>
+                            <img src="assets/preview-chrome-1.jpg" class="img-fluid" alt="chrome header screenshot">
+                        </td>
                     </tr>
                     <tr>
                         <td class="text-center"><strong>Step 3</strong></td>
-                        <td>Click the option (symbol here) <i>add to install</i></td>
+                        <td>
+                            <p>Click the option <i>Install app</i></p>
+                            <img src="assets/preview-chrome-2.jpg" class="img-fluid" alt="chrome options screenshot">
+                        </td>
                     </tr>
                 </table>
-                <p> <strong>NOTE</strong> If you can't see the button, update your browser</p>
+                <p> <strong>NOTE</strong> If you can't see the option, update your browser</p>
             </div>
         </div>
         <div class="row" *ngSwitchCase="'samsung'">
@@ -58,10 +67,12 @@
                     </tr>
                     <tr>
                         <td class="text-center"><strong>Step 2</strong></td>
-                        <td>Press the download app button in the app header</td>
+                        <td>
+                            <p>Press the download app button in the app header</p>
+                            <img src="assets/preview-samsung-1.jpg" class="img-fluid" alt="samsung header screenshot">
+                        </td>
                     </tr>
                 </table>
-                <p>Image of header here</p>
             </div>
         </div>
     </ng-container>

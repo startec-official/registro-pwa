@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DebugComponent } from './debug/debug.component';
 import { InstallHelpComponent } from './install-help/install-help.component';
 import { QrShowComponent } from './qr-show/qr-show.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
     canActivate : [QrGuardService]
   },
   { path : 'registration' , component : RegistrationComponent },
-  { path : '' , redirectTo : '/welcome' , pathMatch : 'full' }
+  { path : '' , redirectTo : '/welcome' , pathMatch : 'full' },
+  { path : 'debug' , component : DebugComponent }
 ];
 
 @NgModule({

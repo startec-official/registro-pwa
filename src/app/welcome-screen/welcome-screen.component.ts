@@ -10,10 +10,5 @@ export class WelcomeScreenComponent implements OnInit {
 
   constructor( private storageService : StorageService ) { }
 
-  ngOnInit(): void {
-  }
-
-  clearEntries() {
-    this.storageService.removeAllEntries().subscribe(() => console.log('all entries cleared...'));
-  }
+  ngOnInit(): void {}
 }

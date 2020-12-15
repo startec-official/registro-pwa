@@ -12,6 +12,7 @@ import { QrShowComponent } from './qr-show/qr-show.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { InstallHelpComponent } from './install-help/install-help.component';
+import { DebugComponent } from './debug/debug.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InstallHelpComponent } from './install-help/install-help.component';
     UserListComponent,
     QrShowComponent,
     RegistrationComponent,
-    InstallHelpComponent
+    InstallHelpComponent,
+    DebugComponent
   ],
   imports: [
     BrowserModule,

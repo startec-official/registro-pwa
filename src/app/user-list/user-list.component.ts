@@ -9,33 +9,31 @@ import { StorageService } from '../utils/storage.service';
 export class UserListComponent implements OnInit {
 
   users : User[];
+  keys : string[];
+  
   lastVisible : number;
+
   isVisible : boolean[];
   dataReady : boolean;
-  listEmpty : boolean;
 
   constructor( private storageService : StorageService ) { }
 
   ngOnInit(): void {
     this.users = [];
+    this.keys = [];
     this.isVisible = [];
     this.lastVisible = -1;
     this.dataReady = false;
-    this.listEmpty = true;
     this.getUsers();
   }
 
   getUsers() : void {
-    this.storageService.retrieveUserEntries().then((userData : User[]) => {
-      this.users = userData;
-      // FIXME : set list empty to false only when a user is detected
-      if( this.users.length > 0 ) { 
-        this.listEmpty = false;
-        console.log( this.users.length );
-      }
-      this.listEmpty = false; // debug only
+    this.storageService.retrieveUserEntries().then((userDataWithKeys : { userArray : User[] , userKeys : string[] } ) => {
+      this.users = userDataWithKeys.userArray;
+      this.keys = userDataWithKeys.userKeys;
+      console.log(this.users);
+      console.log(this.keys);
       this.dataReady = true;
-      console.log( this.users );
     });
   }
 
@@ -46,7 +44,6 @@ export class UserListComponent implements OnInit {
       }
     }
     this.lastVisible = i;
-    console.log( `last visible : ${ this.lastVisible }` );
     this.isVisible[i] = !this.isVisible[i];
   }
 }
