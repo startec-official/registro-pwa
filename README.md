@@ -40,12 +40,43 @@ To check if your browser meets all the requirements, you can use this [tool](htt
 
 Development
 -------
-This build was developed for a *Raspberry Pi 3 B+* on *Raspbian Buster*. It will also work for the Raspberry Pi Zero W and Raspberry Pi 4 boards.
+This project has been generated with the following package versions:
 
-This code requires a functional device server. To learn more how to setup the server and the Raspberry Pi environment, please check out the README for the server code repository [here](https://github.com/startec-official/registro-raspi-server).
+```
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / Γû│ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
 
+Angular CLI: 9.1.12
+Node: 12.18.2
+OS: win32 x64
+
+Angular: 9.1.12
+... animations, cli, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+Ivy Workspace: Yes
+
+Package                           Version
+-----------------------------------------------------------
+@angular-devkit/architect         0.901.12
+@angular-devkit/build-angular     0.901.12
+@angular-devkit/build-optimizer   0.901.12
+@angular-devkit/build-webpack     0.901.12
+@angular-devkit/core              9.1.12
+@angular-devkit/schematics        9.1.12
+@ngtools/webpack                  9.1.12
+@schematics/angular               9.1.12
+@schematics/update                0.901.12
+rxjs                              6.5.5
+typescript                        3.8.3
+webpack                           4.42.0
+```
 ### Device Deployment
-Once server and environment is set up. You can deploy to device by running ng `build --prod` inside the folder from the terminal, and copying the content of the generated project folder (usually `dist/<project-name>`) to `/var/www/html` in the Raspberry Pi.
+All functional versions of this app are hosted in GitHub Pages. Browsers may require `HTTPS` to allow PWA functionality. To learn how to deploy an Angular project to Github Pages, you can refer to this [excellent tutorial](https://medium.com/tech-insights/how-to-deploy-angular-apps-to-github-pages-gh-pages-896c4e10f9b4) by Joseph Adediji.
 
 Contributions
 -------
