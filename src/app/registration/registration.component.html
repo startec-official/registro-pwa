@@ -192,7 +192,7 @@
                             [disabled]="!yearSelected"
                             #month="ngModel"
                             ngModel>
-                        <option *ngFor="let month of months; index as monthIdx" [value]="monthIdx" (change)="changedMonth(monthIdx)">{{ month }}</option>
+                        <option *ngFor="let month of months; index as monthIdx" [value]="monthIdx + 1" (change)="changedMonth(monthIdx)">{{ month }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4" *ngIf="showDate">
