@@ -134,24 +134,6 @@
                         ngModel>
                 </div>
             </div>
-            <br />  
-            <div class="form-group row">
-                <label for="birthdate" class="col-sm-3 col-form-label">Date of Birth
-                    <span class="text-danger" *ngIf="birthdate.invalid && ( birthdate.touched || birthdate.dirty )"> 
-                        <span class="badge badge-danger">🛈</span>
-                        required
-                    </span>
-                </label>
-                <div class="col-sm-9">
-                    <input type="date"
-                        required
-                        class="form-control col-sm-5"
-                        name="birthdate"
-                        id="birthdate"
-                        #birthdate="ngModel"
-                        ngModel>
-                </div>
-            </div>
             <div class="form-group row">
                 <label for="age" class="col-sm-3 col-form-label">Age
                     <span class="text-danger" *ngIf="age.invalid && ( age.touched || age.dirty )"> 
@@ -175,6 +157,62 @@
                         ngModel>
                 </div>
             </div>
+            <br />
+            <h5>Date of Birth</h5> 
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="year" class="col-form-label">Year
+                        <span class="text-danger" *ngIf="year.invalid && (year.touched || year.dirty)"> 
+                            <span class="badge badge-danger">🛈</span>
+                            required
+                        </span>
+                    </label>
+                    <select required
+                            class="form-control"
+                            id="year"
+                            name="year" 
+                            (change)="yearSelected = true;"
+                            #year="ngModel"
+                            ngModel>
+                        <option *ngFor="let aYear of years" [value]="aYear">{{ aYear }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4">
+                    <label for="month" class="col-form-label">Month
+                        <span class="text-danger" *ngIf="month.invalid && (month.touched || month.dirty)"> 
+                            <span class="badge badge-danger">🛈</span>
+                            required
+                        </span>
+                    </label>
+                    <select required
+                            class="form-control"
+                            id="month"
+                            name="month" 
+                            (change)="changedMonth( month.value )"
+                            [disabled]="!yearSelected"
+                            #month="ngModel"
+                            ngModel>
+                        <option *ngFor="let month of months; index as monthIdx" [value]="monthIdx" (change)="changedMonth(monthIdx)">{{ month }}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4" *ngIf="showDate">
+                    <label for="day" class="col-form-label">Date
+                        <span class="text-danger" *ngIf="day.invalid && (day.touched || day.dirty)"> 
+                            <span class="badge badge-danger">🛈</span>
+                            required
+                        </span>
+                    </label>
+                    <select required
+                            class="form-control"
+                            id="day"
+                            name="day" 
+                            #day="ngModel"
+                            [disabled]="!monthSelected"
+                            ngModel>
+                        <option *ngFor="let day of days[dayCors[currentMonthIndex] == 2 ? ( year.value % 4 == 0 ? 3 : 2 ) : dayCors[currentMonthIndex] ]" [value]="day">{{ day }}</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </fieldset>
     <fieldset ngModelGroup="address" #address="ngModelGroup">
@@ -187,21 +225,42 @@
                     <h5>Address</h5>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="houseNumber" class="col-sm-3 col-form-label">House/Lot/Bldg No.</label>
-                <div class="col-sm-9">
-                    <input type="text"
-                           class="form-control"
-                           id="houseNumber"
-                           name="houseNumber"
-                           placeholder="ex. #58, 1425"
-                           ngModel>
+            <div class="p-2 border-danger" [ngClass]="{'border' : ( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty ) }">
+                <span class="text-danger" *ngIf="( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty )">
+                    <span class="badge badge-danger">🛈</span>
+                    fill up at least one of these two
+                </span>
+                <div class="form-group row">
+                    <label for="houseNumber" class="col-sm-3 col-form-label">House/Lot/Bldg No.</label>
+                    <div class="col-sm-9">
+                        <input type="text"
+                               required
+                               class="form-control"
+                               id="houseNumber"
+                               name="houseNumber"
+                               placeholder="ex. #58, 1425"
+                               #houseNumber="ngModel"
+                               ngModel>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="residence" class="col-sm-3 col-form-label">Residence/Building</label>
+                    <div class="col-sm-9">
+                        <input type="text"
+                               required
+                               class="form-control"
+                               id="residence"
+                               name="residence"
+                               placeholder="ex. Rizal Residence, Renato Complex, Jose Mariano Building"
+                               #residence="ngModel"
+                               ngModel>
+                    </div>
                 </div>
             </div>
             <div class="p-2 border-danger" [ngClass]="{'border' : ( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty ) }">
                 <span class="text-danger" *ngIf="( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty )">
                     <span class="badge badge-danger">🛈</span>
-                    fill up one of these two
+                    fill up at least one of these two
                 </span>
                 <div class="form-group row">
                     <label for="zone" class="col-sm-3 col-form-label">Zone</label>
@@ -234,7 +293,7 @@
             <div class="p-2 border-danger" [ngClass]="{'border' : ( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty ) }">
                 <span class="text-danger" *ngIf="( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty )">
                     <span class="badge badge-danger">🛈</span>
-                    fill up one of these two
+                    fill up at least one of these two
                 </span>
                 <div class="form-group row">
                     <label for="subdivision" class="col-sm-3 col-form-label">Subdivision</label>
@@ -348,7 +407,7 @@
         <div class="col-sm-12 text-center">
             <button type="submit"
                     class="btn btn-lg btn-success m-5"
-                    [disabled]="!( certify.valid && personal.valid && ( ( zone.valid || street.valid ) && (subdivision.valid || barangay.valid) && city.valid && province.valid && region.valid ))">Submit
+                    [disabled]="!( certify.valid && personal.valid && ( (houseNumber.valid || residence.valid) && ( zone.valid || street.valid ) && (subdivision.valid || barangay.valid) && city.valid && province.valid && region.valid ))">Submit
             </button>
         </div>
     </div>

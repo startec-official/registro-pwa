@@ -4,7 +4,7 @@ import { User } from '../utils/user';
 import { StorageService } from '../utils/storage.service';
 import { environment } from 'src/environments/environment';
 import { of } from "rxjs";
-import { map , mergeMap } from "rxjs/operators";
+import { mergeMap } from "rxjs/operators";
 
 @Component({
   selector: 'app-registration',
@@ -14,6 +14,18 @@ import { map , mergeMap } from "rxjs/operators";
 export class RegistrationComponent implements OnInit {
 
   formModel : User;
+  
+  months : string[] = ["January","February","March","April","May","June","July","August","September","October","November", "December"]
+  dayCors : number[] = [1,2,1,0,1,0,1,1,0,1,0,1];
+  
+  currentMonthIndex : number;
+
+  days : any[];
+  years : number[];
+
+  monthSelected : boolean;
+  yearSelected : boolean;
+  showDate : boolean = false;
 
   constructor( private storageService : StorageService , 
                private route : ActivatedRoute,
@@ -21,6 +33,34 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit(): void {
     this.formModel = new User('',-1,'','','','');
+    this.currentMonthIndex = 0;
+    this.monthSelected = false;
+    this.yearSelected = false;
+    this.days = [];
+    this.years = [];
+    this.generateDateInput();
+    this.showDate = true;
+  }
+
+  generateDateInput() : void {
+    let daysToPush = [];
+    for (let i = 1; i <= 30; i++) {daysToPush.push(i);}
+    this.days.push(daysToPush);
+    daysToPush = [];
+    for (let i = 1; i <= 31; i++) {daysToPush.push(i);}
+    this.days.push(daysToPush);
+    daysToPush = [];
+    for (let i = 1; i <= 28; i++) {daysToPush.push(i);}
+    this.days.push(daysToPush);
+    daysToPush = [];
+    for (let i = 1; i <= 29; i++) {daysToPush.push(i);}
+    this.days.push(daysToPush);
+    for (let i = 1900; i <= 2020; i++) {this.years.push(i);}
+  }
+
+  changedMonth(monthIdx : number) {
+    this.monthSelected = true;
+    this.currentMonthIndex = monthIdx;
   }
 
   onSubmit( formValue : any ) {
@@ -43,12 +83,16 @@ export class RegistrationComponent implements OnInit {
   }
 
   addPersonalInfo( formValue : any ) : void {
-    this.formModel.name = `${formValue.personal.firstName} ${formValue.personal.middleInitial} ${formValue.personal.lastName}`;
+    for( let property in formValue.personal ) {
+      if( this.formModel.hasOwnProperty(`${property}`) ) {
+        this.formModel[property] = formValue.personal[property].toString();
+        if( typeof ( this.formModel[property] ) == 'number' )
+          this.formModel[property] = parseInt(formValue.personal[property]);
+      }
+    }
+    this.formModel.name = `${formValue.personal.lastName}, ${formValue.personal.firstName} ${formValue.personal.middleInitial}`.trim();
     this.formModel.name += formValue.personal.suffix != "none" ? ` ${formValue.personal.suffix}` : '';
-    this.formModel.age = formValue.personal.age;
-    this.formModel.birthdate = formValue.personal.birthdate;
-    this.formModel.sex = formValue.personal.sex;
-    this.formModel.phoneNumber = formValue.personal.phoneNumber;
+    this.formModel.birthdate = `${formValue.personal.year}-${formValue.personal.month}-${formValue.personal.day}`;
   }
 
   addAddress( formValue : any ) : void {
