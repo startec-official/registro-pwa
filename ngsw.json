@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1608019629078,
+  "timestamp": 1608198823359,
   "index": "https://startec-official.github.io/registro-pwa/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://startec-official.github.io/registro-pwa/favicon.ico",
         "https://startec-official.github.io/registro-pwa/index.html",
-        "https://startec-official.github.io/registro-pwa/main-es2015.0bdd99c4b2c461b69319.js",
-        "https://startec-official.github.io/registro-pwa/main-es5.0bdd99c4b2c461b69319.js",
+        "https://startec-official.github.io/registro-pwa/main-es2015.b9e77a3fd55a3fdbb60b.js",
+        "https://startec-official.github.io/registro-pwa/main-es5.b9e77a3fd55a3fdbb60b.js",
         "https://startec-official.github.io/registro-pwa/manifest.webmanifest",
         "https://startec-official.github.io/registro-pwa/polyfills-es2015.f332a089ad1600448873.js",
         "https://startec-official.github.io/registro-pwa/polyfills-es5.177e85a9724683782539.js",
@@ -58,9 +58,9 @@
     "https://startec-official.github.io/registro-pwa/assets/preview-chrome-2.jpg": "cd897aa0df0e2c3188769a0671845bf7675cc0dd",
     "https://startec-official.github.io/registro-pwa/assets/preview-samsung-1.jpg": "a3d650a8a7383431d25191d13c4aace62c6ab2ee",
     "https://startec-official.github.io/registro-pwa/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://startec-official.github.io/registro-pwa/index.html": "3937a424bd4565e3527368f3bd719e2992bfc03e",
-    "https://startec-official.github.io/registro-pwa/main-es2015.0bdd99c4b2c461b69319.js": "cb61f3cffd11afeca0443291b6313325e6d11122",
-    "https://startec-official.github.io/registro-pwa/main-es5.0bdd99c4b2c461b69319.js": "e30e51bd1168bbef697fe4dc97b262dbc0cee003",
+    "https://startec-official.github.io/registro-pwa/index.html": "5551e5dba6e1e76e94d318018673078356c18086",
+    "https://startec-official.github.io/registro-pwa/main-es2015.b9e77a3fd55a3fdbb60b.js": "84ba7dd1e125531b6e2365de13b82441f8ddb91c",
+    "https://startec-official.github.io/registro-pwa/main-es5.b9e77a3fd55a3fdbb60b.js": "fd1d192757e7a381285c50e69cc6cfbdabc05ce1",
     "https://startec-official.github.io/registro-pwa/manifest.webmanifest": "7ef80dc8dfdafeacce41ba32393a6aaa992fda34",
     "https://startec-official.github.io/registro-pwa/polyfills-es2015.f332a089ad1600448873.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://startec-official.github.io/registro-pwa/polyfills-es5.177e85a9724683782539.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
