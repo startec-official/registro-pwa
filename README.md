@@ -31,6 +31,7 @@ To make use of all features, please ensure you update your browser to the latest
 The following browsers are known to have almost full support for PWA technology:
 * Google Chrome
 * Samsung Internet
+* Safari
 
 This app makes use of the following additional features:
 * IndexedDB
