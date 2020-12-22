@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1608629152406,
+  "timestamp": 1608631072145,
   "index": "https://startec-official.github.io/registro-pwa/index.html",
   "assetGroups": [
     {
@@ -29,9 +29,8 @@
       "urls": [
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-128x128.png",
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-144x144.png",
-        "https://startec-official.github.io/registro-pwa/assets/icons/icon-152x152.png",
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-192x192.png",
-        "https://startec-official.github.io/registro-pwa/assets/icons/icon-384x284.png",
+        "https://startec-official.github.io/registro-pwa/assets/icons/icon-384x384.png",
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-512x512.png",
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-72x72.png",
         "https://startec-official.github.io/registro-pwa/assets/icons/icon-96x96.png",
@@ -46,14 +45,13 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-128x128.png": "896eb9d9e5dda4fd87cdeac4ecfc990efdb9c536",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-144x144.png": "f9a6c2069e3c7f4e83a3d6952dbce97edcbc6bcd",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-152x152.png": "7c0d5acdb9671695d628c0bce22e902eef386476",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-192x192.png": "6a9ea20820315a285da71830882f00d27e20dcb1",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-384x284.png": "c70c64c4223db9b64be21aeafbfd8530e869744f",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-512x512.png": "b1c5091c5223d19115fc24883d39ca5524546087",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-72x72.png": "b29d72c2557b05e892b5b0d90c0cb01d9b726e0a",
-    "https://startec-official.github.io/registro-pwa/assets/icons/icon-96x96.png": "edd9eb9ac637a60b6466904c137733d5a48d59bd",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-128x128.png": "f5e39bc0aa246d3d13ee64d5c24058d1355c0746",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-144x144.png": "29653b7099a264a9464de4507d687cbdc9788bc9",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-192x192.png": "fb7965760e26f5a3dad5df1ad02a5a3f88db73bc",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-384x384.png": "67be1bad645283c7d393e4fe02c354cbbc5a0a8b",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-512x512.png": "e8938a93a43b4187dffe6a533343339f0510d9f6",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-72x72.png": "389704a0a7b3cfeb291d4a38f0f036830f64478c",
+    "https://startec-official.github.io/registro-pwa/assets/icons/icon-96x96.png": "1f0a483e3e650bfde5628aca5a4c98a71aafa22f",
     "https://startec-official.github.io/registro-pwa/assets/inline-logo.png": "8453b687bdaeb774390b27ebd2380d7193269c5e",
     "https://startec-official.github.io/registro-pwa/assets/plus.svg": "2c0059acc025a99b2fd565cf083f3bf9ba156913",
     "https://startec-official.github.io/registro-pwa/assets/preview-chrome-1.jpg": "efe72d79f8e1f9b61de8f22010c3c281236dba6e",
