@@ -55,7 +55,7 @@ export class RegistrationComponent implements OnInit {
     daysToPush = [];
     for (let i = 1; i <= 29; i++) {daysToPush.push(i);}
     this.days.push(daysToPush);
-    for (let i = 1900; i <= 2020; i++) {this.years.push(i);}
+    for (let i = 2020; i >= 1900; i--) {this.years.push(i);}
   }
 
   changedMonth(monthIdx : number) {
