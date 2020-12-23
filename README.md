@@ -31,6 +31,7 @@ To make use of all features, please ensure you update your browser to the latest
 The following browsers are known to have almost full support for PWA technology:
 * Google Chrome
 * Samsung Internet
+* Safari
 
 This app makes use of the following additional features:
 * IndexedDB
@@ -87,4 +88,4 @@ LICENSE and Use
 -------
 Please refer to the `LICENSE.md` file for more information.
 
-This project is covered by the MIT License. © 2020 | Startec Innovations
+This project is covered by the BSD License. © 2020 | Startec Innovations
