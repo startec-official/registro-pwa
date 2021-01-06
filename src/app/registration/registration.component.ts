@@ -19,6 +19,7 @@ export class RegistrationComponent implements OnInit {
   dayCors : number[] = [1,2,1,0,1,0,1,1,0,1,0,1];
   
   currentMonthIndex : number;
+  suffixDefault : string;
 
   days : any[];
   years : number[];
@@ -36,6 +37,7 @@ export class RegistrationComponent implements OnInit {
     this.currentMonthIndex = 0;
     this.monthSelected = false;
     this.yearSelected = false;
+    this.suffixDefault = 'none';
     this.days = [];
     this.years = [];
     this.generateDateInput();

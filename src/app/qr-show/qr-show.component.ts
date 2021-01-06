@@ -47,6 +47,7 @@ export class QrShowComponent implements OnInit {
     for( const property in userData )
       plaintext += userData[property] + environment.delimiter;
     plaintext = plaintext.slice(0,plaintext.length-1);
+    console.log(plaintext);
     this.qrData = this.cryptoService.encryptQr( plaintext ); // encrypt with AES append the key to ciphertext
     this.dataReady = true;
   }
