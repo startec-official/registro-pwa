@@ -31,13 +31,11 @@ export class UserListComponent implements OnInit {
     this.storageService.retrieveUserEntries().then((userDataWithKeys : { userArray : User[] , userKeys : string[] } ) => {
       this.users = userDataWithKeys.userArray;
       this.keys = userDataWithKeys.userKeys;
-      console.log(this.users);
-      console.log(this.keys);
       this.dataReady = true;
     });
   }
 
-  showMenu( i : number ) {
+  showMenu( i : number ) : void {
     if( this.lastVisible > -1 ) {
       if( this.lastVisible != i ) {
         this.isVisible[ this.lastVisible ] = false;
@@ -45,5 +43,12 @@ export class UserListComponent implements OnInit {
     }
     this.lastVisible = i;
     this.isVisible[i] = !this.isVisible[i];
+  }
+
+  deleteUser( userIndex : number ) : void {
+    this.storageService.removeUser(this.keys[userIndex]).subscribe(() => {
+      this.users.splice(userIndex,1);
+      this.lastVisible = -1;
+    });
   }
 }

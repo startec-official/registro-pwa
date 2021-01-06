@@ -60,7 +60,7 @@ export class RegistrationComponent implements OnInit {
 
   changedMonth(monthIdx : number) {
     this.monthSelected = true;
-    this.currentMonthIndex = monthIdx;
+    this.currentMonthIndex = monthIdx - 1;
   }
 
   onSubmit( formValue : any ) {

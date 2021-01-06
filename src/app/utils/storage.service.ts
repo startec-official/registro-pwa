@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { StorageMap } from '@ngx-pwa/local-storage';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from './user';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -61,6 +61,10 @@ export class StorageService {
         }
       });
     });
+  }
+
+  removeUser(key : string ) {
+    return this.storage.delete( key );
   }
 
   removeAllEntries() {

@@ -17,8 +17,7 @@
                     <div class="card-footer text-muted text-center p-3" *ngIf="this.isVisible[i]">
                         <div class="row">
                             <div class="col text-success" [routerLink]="['/qr' , keys[i]]">Use</div>
-                            <div class="col text-warning">Edit</div>
-                            <div class="col text-danger">Delete</div>
+                            <div class="col text-danger" (click)="deleteUser(i)">Delete</div>
                         </div>
                     </div>
                 </div>
