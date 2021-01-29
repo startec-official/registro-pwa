@@ -23,7 +23,6 @@ export class WelcomeScreenComponent implements OnInit {
         });
       });
     }
-    // this.modalService.open( this.content , {ariaLabelledBy: 'modal-basic-title'}).result.then( _ => {});
   }
 
   reload(): void {
