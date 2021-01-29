@@ -7,84 +7,64 @@
                 <strong>Register New User</strong>
                 <button type="button" class="close" aria-label="Close" routerLink="/users">
                     <span aria-hidden="true">&times;</span>
-                  </button>
+                </button>
             </div>
         </div>
     </div>
-    <div class="container"><div class="row"><div class="col-sm-12 mt-5"><br /></div></div></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 mt-5"><br /></div>
+        </div>
+    </div>
     <fieldset ngModelGroup="personal" #personal="ngModelGroup">
         <div class="container">
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3 col-form-label">First Name
-                    <span class="text-danger" *ngIf="firstName.invalid && ( firstName.touched || firstName.dirty )"> 
+                    <span class="text-danger" *ngIf="firstName.invalid && ( firstName.touched || firstName.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text"  
-                        required
-                        class="form-control"
-                        name="firstName"
-                        id="firstName"
-                        placeholder="First Name"
-                        #firstName="ngModel"
-                        autocomplete="off"
-                        ngModel>
+                    <input type="text" required class="form-control" name="firstName" id="firstName"
+                        placeholder="First Name" #firstName="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="lastName" class="col-sm-3 col-form-label">Last Name
-                    <span class="text-danger" *ngIf="lastName.invalid && ( lastName.touched || lastName.dirty )"> 
+                    <span class="text-danger" *ngIf="lastName.invalid && ( lastName.touched || lastName.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text"  
-                        required
-                        class="form-control"
-                        name="lastName"
-                        id="lastName"
-                        placeholder="Last Name"
-                        #lastName="ngModel"
-                        ngModel>
+                    <input type="text" required class="form-control" name="lastName" id="lastName"
+                        placeholder="Last Name" #lastName="ngModel" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="middleInitial" class="col-sm-3 col-form-label">Middle Initial
-                    <span class="text-danger" *ngIf="middleInitial.invalid && ( middleInitial.touched || middleInitial.dirty )"> 
+                    <span class="text-danger"
+                        *ngIf="middleInitial.invalid && ( middleInitial.touched || middleInitial.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-3">
-                    <input type="text"  
-                        required
-                        class="form-control"
-                        name="middleInitial"
-                        id="middleInitial"
-                        placeholder="M.I."
-                        maxlength="1"
-                        #middleInitial="ngModel"
-                        autocomplete="off"
-                        ngModel>
+                    <input type="text" required class="form-control" name="middleInitial" id="middleInitial"
+                        placeholder="M.I." maxlength="1" #middleInitial="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="suffix" class="col-sm-3 col-form-label">Suffix
-                    <span class="text-danger" *ngIf="suffix.invalid && ( suffix.touched || suffix.dirty )"> 
+                    <span class="text-danger" *ngIf="suffix.invalid && ( suffix.touched || suffix.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-3">
-                    <select required
-                            class="form-control"
-                            id="suffix"
-                            name="suffix" 
-                            #suffix="ngModel"
-                            [(ngModel)]="suffixDefault">
+                    <select required class="form-control" id="suffix" name="suffix" #suffix="ngModel"
+                        [(ngModel)]="suffixDefault">
                         <option value="none">None</option>
                         <option>SR</option>
                         <option>JR</option>
@@ -96,124 +76,92 @@
                         <option>VIII</option>
                         <option>IX</option>
                         <option>X</option>
-                        </select>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="sex" class="col-sm-3 col-form-label">Sex
-                    <span class="text-danger" *ngIf="sex.invalid && ( sex.touched || sex.dirty )"> 
+                    <span class="text-danger" *ngIf="sex.invalid && ( sex.touched || sex.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-3">
-                    <select required
-                            class="form-control"
-                            id="sex"
-                            name="sex" 
-                            #sex="ngModel"
-                            ngModel>
+                    <select required class="form-control" id="sex" name="sex" #sex="ngModel" ngModel>
                         <option>Male</option>
                         <option>Female</option>
-                        </select>
+                    </select>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="phoneNumber" class="col-sm-3 col-form-label">Mobile Number
-                    <span class="text-danger" *ngIf="phoneNumber.invalid && ( phoneNumber.touched || phoneNumber.dirty )"> 
+                    <span class="text-danger"
+                        *ngIf="phoneNumber.invalid && ( phoneNumber.touched || phoneNumber.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-3">
-                    <input type="text"  
-                        required
-                        class="form-control"
-                        name="phoneNumber"
-                        id="phoneNumber"
-                        placeholder="ex. +631234567890, 01234567890"
-                        #phoneNumber="ngModel"
-                        autocomplete="off"
-                        ngModel>
+                    <input type="text" required class="form-control" name="phoneNumber" id="phoneNumber"
+                        placeholder="ex. +631234567890, 01234567890" #phoneNumber="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="age" class="col-sm-3 col-form-label">Age
-                    <span class="text-danger" *ngIf="age.invalid && ( age.touched || age.dirty )"> 
+                    <span class="text-danger" *ngIf="age.invalid && ( age.touched || age.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
-                    <span class="text-danger" *ngIf="age.value < 0 && ( age.touched || age.dirty )"> 
+                    <span class="text-danger" *ngIf="age.value < 0 && ( age.touched || age.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         invalid age
                     </span>
                 </label>
                 <div class="col-sm-4">
-                    <input type="number"  
-                        required
-                        class="form-control"
-                        name="age"
-                        id="age"
-                        placeholder="ex. 21"
-                        min="0"
-                        #age="ngModel"
-                        autocomplete="off"
-                        ngModel>
+                    <input type="number" required class="form-control" name="age" id="age" placeholder="ex. 21" min="0"
+                        #age="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <br />
-            <h5>Date of Birth</h5> 
+            <h5>Date of Birth</h5>
             <div class="form-group row">
                 <div class="col-sm-4">
                     <label for="year" class="col-form-label">Year
-                        <span class="text-danger" *ngIf="year.invalid && (year.touched || year.dirty)"> 
+                        <span class="text-danger" *ngIf="year.invalid && (year.touched || year.dirty)">
                             <span class="badge badge-danger">🛈</span>
                             required
                         </span>
                     </label>
-                    <select required
-                            class="form-control"
-                            id="year"
-                            name="year" 
-                            (change)="yearSelected = true;"
-                            #year="ngModel"
-                            ngModel>
+                    <select required class="form-control" id="year" name="year" (change)="yearSelected = true;"
+                        #year="ngModel" ngModel>
                         <option *ngFor="let aYear of years" [value]="aYear">{{ aYear }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
                     <label for="month" class="col-form-label">Month
-                        <span class="text-danger" *ngIf="month.invalid && (month.touched || month.dirty)"> 
+                        <span class="text-danger" *ngIf="month.invalid && (month.touched || month.dirty)">
                             <span class="badge badge-danger">🛈</span>
                             required
                         </span>
                     </label>
-                    <select required
-                            class="form-control"
-                            id="month"
-                            name="month" 
-                            (change)="changedMonth( month.value )"
-                            [disabled]="!yearSelected"
-                            #month="ngModel"
-                            ngModel>
-                        <option *ngFor="let month of months; index as monthIdx" [value]="monthIdx + 1" (change)="changedMonth(monthIdx)">{{ month }}</option>
+                    <select required class="form-control" id="month" name="month" (change)="changedMonth( month.value )"
+                        [disabled]="!yearSelected" #month="ngModel" ngModel>
+                        <option *ngFor="let month of months; index as monthIdx" [value]="monthIdx + 1"
+                            (change)="changedMonth(monthIdx)">{{ month }}</option>
                     </select>
                 </div>
                 <div class="col-sm-4" *ngIf="showDate">
                     <label for="day" class="col-form-label">Date
-                        <span class="text-danger" *ngIf="day.invalid && (day.touched || day.dirty)"> 
+                        <span class="text-danger" *ngIf="day.invalid && (day.touched || day.dirty)">
                             <span class="badge badge-danger">🛈</span>
                             required
                         </span>
                     </label>
-                    <select required
-                            class="form-control"
-                            id="day"
-                            name="day" 
-                            #day="ngModel"
-                            [disabled]="!monthSelected"
-                            ngModel>
-                        <option *ngFor="let day of days[dayCors[currentMonthIndex] == 2 ? ( year.value % 4 == 0 ? 3 : 2 ) : dayCors[currentMonthIndex] ]" [value]="day">{{ day }}</option>
+                    <select required class="form-control" id="day" name="day" #day="ngModel" [disabled]="!monthSelected"
+                        ngModel>
+                        <option
+                            *ngFor="let day of days[dayCors[currentMonthIndex] == 2 ? ( year.value % 4 == 0 ? 3 : 2 ) : dayCors[currentMonthIndex] ]"
+                            [value]="day">{{ day }}</option>
                     </select>
                 </div>
             </div>
@@ -222,173 +170,129 @@
     <fieldset ngModelGroup="address" #address="ngModelGroup">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12"><hr></div>
+                <div class="col-sm-12">
+                    <hr>
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
                     <h5>Address</h5>
                 </div>
             </div>
-            <div class="p-2 border-danger" [ngClass]="{'border' : ( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty ) }">
-                <span class="text-danger" *ngIf="( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty )">
+            <div class="p-2 border-danger"
+                [ngClass]="{'border' : ( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty ) }">
+                <span class="text-danger"
+                    *ngIf="( houseNumber.invalid && residence.invalid ) && ( houseNumber.touched || houseNumber.dirty || residence.touched || residence.dirty )">
                     <span class="badge badge-danger">🛈</span>
                     fill up at least one of these two
                 </span>
                 <div class="form-group row">
                     <label for="houseNumber" class="col-sm-3 col-form-label">House/Lot/Bldg No.</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="houseNumber"
-                               name="houseNumber"
-                               placeholder="ex. #58, 1425"
-                               #houseNumber="ngModel"
-                               autocomplete="off"
-                               ngModel>
+                        <input type="text" required class="form-control" id="houseNumber" name="houseNumber"
+                            placeholder="ex. #58, 1425" #houseNumber="ngModel" autocomplete="off" ngModel>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="residence" class="col-sm-3 col-form-label">Residence/Building</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="residence"
-                               name="residence"
-                               placeholder="ex. Rizal Residence, Renato Complex, Jose Mariano Building"
-                               #residence="ngModel"
-                               ngModel>
+                        <input type="text" required class="form-control" id="residence" name="residence"
+                            placeholder="ex. Rizal Residence, Renato Complex, Jose Mariano Building"
+                            #residence="ngModel" ngModel>
                     </div>
                 </div>
             </div>
-            <div class="p-2 border-danger" [ngClass]="{'border' : ( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty ) }">
-                <span class="text-danger" *ngIf="( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty )">
+            <div class="p-2 border-danger"
+                [ngClass]="{'border' : ( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty ) }">
+                <span class="text-danger"
+                    *ngIf="( zone.invalid && street.invalid ) && ( zone.touched || zone.dirty || street.touched || street.dirty )">
                     <span class="badge badge-danger">🛈</span>
                     fill up at least one of these two
                 </span>
                 <div class="form-group row">
                     <label for="zone" class="col-sm-3 col-form-label">Zone</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="zone"
-                               name="zone"
-                               placeholder="ex. Zone 1, Sona 2, Purok 3"
-                               #zone="ngModel"
-                               autocomplete="off"
-                               ngModel>
+                        <input type="text" required class="form-control" id="zone" name="zone"
+                            placeholder="ex. Zone 1, Sona 2, Purok 3" #zone="ngModel" autocomplete="off" ngModel>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="street" class="col-sm-3 col-form-label">Street</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="street"
-                               name="street"
-                               placeholder="Luna Street, Malate Drive"
-                               #street="ngModel"
-                               ngModel>
+                        <input type="text" required class="form-control" id="street" name="street"
+                            placeholder="Luna Street, Malate Drive" #street="ngModel" ngModel>
                     </div>
                 </div>
             </div>
 
-            <div class="p-2 border-danger" [ngClass]="{'border' : ( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty ) }">
-                <span class="text-danger" *ngIf="( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty )">
+            <div class="p-2 border-danger"
+                [ngClass]="{'border' : ( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty ) }">
+                <span class="text-danger"
+                    *ngIf="( subdivision.invalid && barangay.invalid ) && ( subdivision.touched || subdivision.dirty || barangay.touched || barangay.dirty )">
                     <span class="badge badge-danger">🛈</span>
                     fill up at least one of these two
                 </span>
                 <div class="form-group row">
                     <label for="subdivision" class="col-sm-3 col-form-label">Subdivision</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="subdivision"
-                               name="subdivision"
-                               placeholder="ex. Ramada Village, Victoria Subdivision"
-                               #subdivision="ngModel"
-                               autocomplete="off"
-                               ngModel>
+                        <input type="text" required class="form-control" id="subdivision" name="subdivision"
+                            placeholder="ex. Ramada Village, Victoria Subdivision" #subdivision="ngModel"
+                            autocomplete="off" ngModel>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="barangay" class="col-sm-3 col-form-label">Barangay</label>
                     <div class="col-sm-9">
-                        <input type="text"
-                               required
-                               class="form-control"
-                               id="barangay"
-                               name="barangay"
-                               placeholder="ex. San Nicolas, Bgy 145, Santiago Young"
-                               #barangay="ngModel"
-                               ngModel>
+                        <input type="text" required class="form-control" id="barangay" name="barangay"
+                            placeholder="ex. San Nicolas, Bgy 145, Santiago Young" #barangay="ngModel" ngModel>
                     </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="city" class="col-sm-3 col-form-label">City / Municipality
-                    <span class="text-danger" *ngIf="city.invalid && ( city.touched || city.dirty )"> 
+                    <span class="text-danger" *ngIf="city.invalid && ( city.touched || city.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text"
-                           required
-                           class="form-control"
-                           id="city"
-                           name="city"
-                           placeholder="ex. Nabua, Manila, Olongapo"
-                           #city="ngModel"
-                           autocomplete="off"
-                           ngModel>
+                    <input type="text" required class="form-control" id="city" name="city"
+                        placeholder="ex. Nabua, Manila, Olongapo" #city="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="province" class="col-sm-3 col-form-label">Province
-                    <span class="text-danger" *ngIf="province.invalid && ( province.touched || province.dirty )"> 
+                    <span class="text-danger" *ngIf="province.invalid && ( province.touched || province.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text"
-                           required
-                           class="form-control"
-                           id="province"
-                           name="province"
-                           placeholder="ex. Camarines Sur, Quezon"
-                           #province="ngModel"
-                           autocomplete="off"
-                           ngModel>
+                    <input type="text" required class="form-control" id="province" name="province"
+                        placeholder="ex. Camarines Sur, Quezon" #province="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="region" class="col-sm-3 col-form-label">Region
-                    <span class="text-danger" *ngIf="region.invalid && ( region.touched || region.dirty )"> 
+                    <span class="text-danger" *ngIf="region.invalid && ( region.touched || region.dirty )">
                         <span class="badge badge-danger">🛈</span>
                         required
                     </span>
                 </label>
                 <div class="col-sm-9">
-                    <input type="text"
-                           required
-                           class="form-control"
-                           id="region"
-                           name="region"
-                           placeholder="ex. MIMAROPA, Bicol"
-                           #region="ngModel"
-                           autocomplete="off"
-                           ngModel>
+                    <input type="text" required class="form-control" id="region" name="region"
+                        placeholder="ex. MIMAROPA, Bicol" #region="ngModel" autocomplete="off" ngModel>
                 </div>
             </div>
         </div>
     </fieldset>
-    <div class="container"><div class="row"><div class="col-sm-12"><hr></div></div></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -398,28 +302,40 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="form-check">
-                    <input class="form-check-input"
-                            required
-                            type="checkbox"
-                            value=""
-                            id="certify" 
-                            name="certify"
-                            #certify="ngModel"
-                            autocomplete="off"
-                            ngModel>
+                    <input class="form-check-input" required type="checkbox" value="" id="certify" name="certify"
+                        #certify="ngModel" autocomplete="off" ngModel>
                     <label class="form-check-label" for="defaultCheck1">
-                      I hereby certify that the data I provided is accurate at the time of registration. I understand my data will only be used exclusively for COVID-19 contact tracing efforts by a certified government agency.
+                        I hereby certify that the data I provided is accurate at the time of registration. I understand
+                        my data will only be used exclusively for COVID-19 contact tracing efforts by a certified
+                        government agency.
                     </label>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="col-sm-12 text-center">
-            <button type="submit"
-                    class="btn btn-lg btn-success m-5"
-                    [disabled]="!( certify.valid && personal.valid && ( (houseNumber.valid || residence.valid) && ( zone.valid || street.valid ) && (subdivision.valid || barangay.valid) && city.valid && province.valid && region.valid ))">Submit
+        <div class="col-sm-12 text-center" (click)="displayVerifyFormMessage(certify.valid, personal.valid , (houseNumber.valid || residence.valid) , ( zone.valid || street.valid ) , (subdivision.valid || barangay.valid) , city.valid , province.valid , region.valid)">
+            <button type="submit" class="btn btn-lg btn-success m-5"
+                [disabled]="!isFormValid(certify.valid, personal.valid , (houseNumber.valid || residence.valid) , ( zone.valid || street.valid ) , (subdivision.valid || barangay.valid) , city.valid , province.valid , region.valid)">Submit
             </button>
         </div>
     </div>
 </form>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Incomplete Fields</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>The following fields are <span class="text-muted">EMPTY</span> but are <strong>required</strong>:</p>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let displayFormName of displayForms">{{ displayFormName }}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancel</button>
+    </div>
+</ng-template>
