@@ -16,3 +16,22 @@
     <span class="text-muted my-auto">Powered by: </span>
     <img src="assets/inline-logo.png" alt="startec-logo" class="img-fluid my-auto" style="max-width: 100px;"> 
   </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update Available</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>An update is available for this app. Please click the button below to reload the page.</p>
+      <hr>
+      <p>The page will continue to load in the background. Reload this page after five minutes to apply changes.a</p>
+      <p class="mt-4"> <strong>NOTE: </strong> if update doesn't work, clear your cache and open the app.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary" (click)="reload()">Begin Update</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancel</button>
+    </div>
+  </ng-template>

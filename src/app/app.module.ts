@@ -13,6 +13,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { FormsModule } from '@angular/forms';
 import { InstallHelpComponent } from './install-help/install-help.component';
 import { DebugComponent } from './debug/debug.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DebugComponent } from './debug/debug.component';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     QRCodeModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
